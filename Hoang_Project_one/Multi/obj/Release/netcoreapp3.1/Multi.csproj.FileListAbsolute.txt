@@ -1,0 +1,13 @@
+C:\Users\Admin\source\repos\Hoang_Project_one\Multi\bin\Release\netcoreapp3.1\Multi.exe
+C:\Users\Admin\source\repos\Hoang_Project_one\Multi\bin\Release\netcoreapp3.1\Multi.deps.json
+C:\Users\Admin\source\repos\Hoang_Project_one\Multi\bin\Release\netcoreapp3.1\Multi.runtimeconfig.json
+C:\Users\Admin\source\repos\Hoang_Project_one\Multi\bin\Release\netcoreapp3.1\Multi.runtimeconfig.dev.json
+C:\Users\Admin\source\repos\Hoang_Project_one\Multi\bin\Release\netcoreapp3.1\Multi.dll
+C:\Users\Admin\source\repos\Hoang_Project_one\Multi\bin\Release\netcoreapp3.1\Multi.pdb
+C:\Users\Admin\source\repos\Hoang_Project_one\Multi\obj\Release\netcoreapp3.1\Multi.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Hoang_Project_one\Multi\obj\Release\netcoreapp3.1\Multi.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Hoang_Project_one\Multi\obj\Release\netcoreapp3.1\Multi.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Hoang_Project_one\Multi\obj\Release\netcoreapp3.1\Multi.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Hoang_Project_one\Multi\obj\Release\netcoreapp3.1\Multi.dll
+C:\Users\Admin\source\repos\Hoang_Project_one\Multi\obj\Release\netcoreapp3.1\Multi.pdb
+C:\Users\Admin\source\repos\Hoang_Project_one\Multi\obj\Release\netcoreapp3.1\Multi.genruntimeconfig.cache
