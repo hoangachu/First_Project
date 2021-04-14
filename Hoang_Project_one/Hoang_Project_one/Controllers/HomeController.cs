@@ -94,8 +94,8 @@ namespace Hoang_Project_one.Controllers
                     }
 
                 }
-
-                return Ok(new { data = i, url = "/ChatBot/ChatPreview?UserID=" + user.UserID + "&&ReceiverID=0" });
+                return Ok(new { data = i, url = "/ChatBot/AudioVideoCall" });
+                //return Ok(new { data = i, url = "/ChatBot/ChatPreview?UserID=" + user.UserID + "&&ReceiverID=0" });
             }
 
         }

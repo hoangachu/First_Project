@@ -10,3 +10,15 @@ C:\Users\Admin\source\repos\Hoang_Project_one\Multi\obj\Debug\netcoreapp3.1\Mult
 C:\Users\Admin\source\repos\Hoang_Project_one\Multi\obj\Debug\netcoreapp3.1\Multi.dll
 C:\Users\Admin\source\repos\Hoang_Project_one\Multi\obj\Debug\netcoreapp3.1\Multi.pdb
 C:\Users\Admin\source\repos\Hoang_Project_one\Multi\obj\Debug\netcoreapp3.1\Multi.genruntimeconfig.cache
+D:\Document\First_Project_ChatHub\Hoang_Project_one\Multi\bin\Debug\netcoreapp3.1\Multi.exe
+D:\Document\First_Project_ChatHub\Hoang_Project_one\Multi\bin\Debug\netcoreapp3.1\Multi.deps.json
+D:\Document\First_Project_ChatHub\Hoang_Project_one\Multi\bin\Debug\netcoreapp3.1\Multi.runtimeconfig.json
+D:\Document\First_Project_ChatHub\Hoang_Project_one\Multi\bin\Debug\netcoreapp3.1\Multi.runtimeconfig.dev.json
+D:\Document\First_Project_ChatHub\Hoang_Project_one\Multi\bin\Debug\netcoreapp3.1\Multi.dll
+D:\Document\First_Project_ChatHub\Hoang_Project_one\Multi\bin\Debug\netcoreapp3.1\Multi.pdb
+D:\Document\First_Project_ChatHub\Hoang_Project_one\Multi\obj\Debug\netcoreapp3.1\Multi.AssemblyInfoInputs.cache
+D:\Document\First_Project_ChatHub\Hoang_Project_one\Multi\obj\Debug\netcoreapp3.1\Multi.AssemblyInfo.cs
+D:\Document\First_Project_ChatHub\Hoang_Project_one\Multi\obj\Debug\netcoreapp3.1\Multi.csproj.CoreCompileInputs.cache
+D:\Document\First_Project_ChatHub\Hoang_Project_one\Multi\obj\Debug\netcoreapp3.1\Multi.dll
+D:\Document\First_Project_ChatHub\Hoang_Project_one\Multi\obj\Debug\netcoreapp3.1\Multi.pdb
+D:\Document\First_Project_ChatHub\Hoang_Project_one\Multi\obj\Debug\netcoreapp3.1\Multi.genruntimeconfig.cache

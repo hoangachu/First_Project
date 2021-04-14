@@ -23,6 +23,13 @@ namespace Hoang_Project_one.Controllers
         [HttpGet]
         public IActionResult ChatPreview(int UserID, int ReceiverID)
         {
+           
+            return View();
+
+        }
+        [HttpGet]
+        public IActionResult AudioVideoCall(int UserID, int ReceiverID)
+        {
             ChatHistory ChatHistory = new ChatHistory();
             var User = new UserController().GetUserByUserID(UserID);
             ChatHistory.UserID = UserID;
