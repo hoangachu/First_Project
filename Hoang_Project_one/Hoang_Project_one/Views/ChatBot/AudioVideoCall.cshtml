@@ -1,18 +1,20 @@
 ﻿
-<!doctype html>
+@*<!doctype html>
 <html>
-<head>
+<head>*@
 
-    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    @*<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">*@
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">*@
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-    <style type="text/css">
+    @*<style type="text/css">
         video {
             background-color: #ddd;
             border-radius: 7px;
             margin: 10px 0px 0px 10px;
-            width: 320px;
+            width: 1000px;
             height: 240px;
         }
 
@@ -20,28 +22,49 @@
             margin: 5px 0px 0px 10px !important;
             width: 654px;
         }
-    </style>
+    </style>*@
 
 
-</head>
+@*</head>*@
 
 
-<body onload="showMyFace()">
+@*<body onload="showMyFace()">*@
+    <div class="container"  onload="showMyFace()">
+     
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+
+                        <video id="yourVideo" autoplay muted></video>
 
 
-    <video id="yourVideo" autoplay muted></video>
+                        <video id="friendsVideo" autoplay></video>
 
 
-    <video id="friendsVideo" autoplay></video>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        @*</div>*@
+
+    </div>
+
+  
+
+    <!--<br />-->
 
 
-    <br />
+    @*<button onclick="showFriendsFace()" type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Call</button>*@
 
 
-    <button onclick="showFriendsFace()" type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Call</button>
-
-
-    <script type="text/javascript">
+    @*<script type="text/javascript">
 
 
         var config = {
@@ -76,11 +99,13 @@
         pc.onicecandidate = (event => event.candidate ? sendMessage(yourId, JSON.stringify({ 'ice': event.candidate })) : console.log("Sent All Ice"));
         pc.onaddstream = (event => friendsVideo.srcObject = event.stream);
         function sendMessage(senderId, data) {
+            console.log(senderId);
             var msg = database.push({ sender: senderId, message: data });
             msg.remove();
         }
         function readMessage(data) {
             var msg = JSON.parse(data.val().message);
+            console.log(msg);
             var sender = data.val().sender;
             if (sender != yourId) {
                 if (msg.ice != undefined) {
@@ -113,8 +138,8 @@
                 .then(offer => pc.setLocalDescription(offer))
                 .then(() => sendMessage(yourId, JSON.stringify({ 'sdp': pc.localDescription })));
         }
-    </script>
+    </script>*@
 
-</body>
+@*</body>
 
-</html>
+</html>*@

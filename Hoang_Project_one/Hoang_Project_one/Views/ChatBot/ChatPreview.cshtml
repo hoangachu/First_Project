@@ -26,12 +26,12 @@
     <link href="https://rawgit.com/mervick/emojionearea/master/dist/emojionearea.css" rel="stylesheet" />
     <script src="https://rawgit.com/mervick/emojionearea/master/dist/emojionearea.js"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-
-
+    <link rel="stylesheet" href="~/css/site.css">
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>*@
 </head>
 
 <body>
+
     <input style="display:none" value="@ViewBag.imgURL" id="imgURL">
     <input style="display:none" value="@ViewBag.UserID" id="userID">
     <input style="display:none" value="@ViewBag.UserName" id="userName">
@@ -100,6 +100,7 @@
                     </span>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-sm-4 contacts">
                     <div class="contact-table-scroll">
@@ -108,7 +109,7 @@
                                 @foreach (var item in Model.LstFriend)
                                 {
                                     <tr>
-                                        <td id="user_@item.FriendId"><img src="@item.ImageURL" alt="" class="profile-image rounded-circle"><span class="dot-2"  ></span></td>
+                                        <td id="user_@item.FriendId"><img src="@item.ImageURL" alt="" class="profile-image rounded-circle"><span class="dot-2"></span></td>
                                         <td class="txtnamefriend">@item.FriendName <br> <small id="smallmsg"></small></td>
                                         <td><small class="datetimelist">@item.Datetimelastest</small></td>
                                     </tr>
@@ -167,8 +168,8 @@
                             <tbody>
                                 <tr>
                                     @*<td><img src="images/p2.jpg" alt="" class="profile-image rounded-circle">  <span class="dot"></span></td>
-                                        <td>Rahul Kumar <br> <small>achi chal rahi</small></td>
-                                        <td><small>11:55 PM</small></td>*@
+                                    <td>Rahul Kumar <br> <small>achi chal rahi</small></td>
+                                    <td><small>11:55 PM</small></td>*@
                                 </tr>
                             </tbody>
                         </table>
@@ -178,9 +179,9 @@
                 <input class="button" id="btntestconnection" style="display:none">
             </div>
         </div>
-
+        <div class="modal fade" id="mymodelcallvideo" role="dialog" data-url="@Url.Action("AudioVideoCall","ChatBot")"></div>
     </div>
-
+   
     <!-- Option 1: Bootstrap Bundle with Popper.js -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
             integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD"
@@ -218,6 +219,16 @@
                     }
                 },
                 saveEmojisAs: 'image'
+            });
+            $('#btnCallVideo').click(function () {
+                debugger;
+                var url = $('#mymodelcallvideo').data('url');
+                $.get(url, function (data) {
+                    $("#mymodelcallvideo").html(data);
+
+                    $("#mymodelcallvideo").modal('show');
+                });
+
             });
             $("#btnSearchOnMeg").click(function () {
                 debugger;

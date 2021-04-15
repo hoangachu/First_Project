@@ -20,15 +20,21 @@ namespace Hoang_Project_one.Controllers
         {
             return View();
         }
-        [HttpGet]
-        public IActionResult ChatPreview(int UserID, int ReceiverID)
-        {
+        //[HttpGet]
+        //public IActionResult ChatPreview(int UserID, int ReceiverID)
+        //{
            
-            return View();
+        //    return View();
+
+        //}
+        public IActionResult AudioVideoCall()
+        {
+
+            return PartialView();
 
         }
         [HttpGet]
-        public IActionResult AudioVideoCall(int UserID, int ReceiverID)
+        public IActionResult ChatPreview(int UserID, int ReceiverID)
         {
             ChatHistory ChatHistory = new ChatHistory();
             var User = new UserController().GetUserByUserID(UserID);
