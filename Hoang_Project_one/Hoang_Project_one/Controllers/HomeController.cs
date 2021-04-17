@@ -15,13 +15,15 @@ using System.Drawing.Imaging;
 using System.Data.SqlClient;
 using Microsoft.AspNetCore.Http;
 using Hoang_Project_one.Models.User;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
 
 namespace Hoang_Project_one.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-     
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -65,7 +67,7 @@ namespace Hoang_Project_one.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string Username, string Password)
+        public async Task<IActionResult> Login(string Username, string Password)
         {
             int i = 0;
             User user = new User();
@@ -87,6 +89,29 @@ namespace Hoang_Project_one.Controllers
                         {
                             i = 1;
                         }
+                        List<Claim> claims = new List<Claim>()
+                        {
+                            new Claim("Name",Username),
+                            new Claim("Password",password)
+                        };
+                        // Create identity
+                        ClaimsIdentity identity = new ClaimsIdentity(claims, "cookie");
+                        //create principle
+                        ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
+
+                        //sign-in
+                        await HttpContext.SignInAsync(
+                           scheme: "SecurityScheme",
+                           principal: claimsPrincipal,
+                           properties: new AuthenticationProperties()
+                           {
+                               IsPersistent = true,
+                               ExpiresUtc = DateTime.UtcNow.AddMinutes(100)
+
+                           }
+
+                       ); ;
+
                     }
                     catch (Exception ex)
                     {

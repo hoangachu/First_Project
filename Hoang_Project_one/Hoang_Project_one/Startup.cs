@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Hoang_Project_one.Hubs;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 namespace Hoang_Project_one
 {
     public class Startup
@@ -31,7 +33,7 @@ namespace Hoang_Project_one
         {
             services.AddControllersWithViews();
             services.AddSignalR();
-
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +56,7 @@ namespace Hoang_Project_one
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapHub<ChatHub>("/chatHub");

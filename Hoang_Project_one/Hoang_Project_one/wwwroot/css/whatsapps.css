@@ -194,3 +194,39 @@ button.launch:hover {
 .row {
     border: ridge;
 }
+video {
+    background-color: #e2bffc;
+    border-radius: 7px;
+    margin: 10px 0px 0px 10px;
+    width: 300px;
+    height: 240px;
+}
+.modal-content{
+    width:800px;
+    justify-content:center;
+    text-align:center;
+}
+.modal-footer{
+    margin-right:130px;
+}
+#seconds {
+    font-size: 1em;
+    color: #ecabf6;
+    font-family: -webkit-body;
+}
+
+#minutes {
+    font-size: 1em;
+    color: #ecabf6;
+    font-family: -webkit-body;
+}
+
+#colon {
+    font-size: 1em;
+    color: #ecabf6;
+    font-family: -webkit-body;
+}
+/*button {
+    margin: 5px 0px 0px 10px !important;
+    width: 654px;
+}*/
