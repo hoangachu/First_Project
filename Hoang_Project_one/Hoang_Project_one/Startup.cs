@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Hoang_Project_one.Hubs;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 
 namespace Hoang_Project_one
 {
@@ -34,6 +35,46 @@ namespace Hoang_Project_one
             services.AddControllersWithViews();
             services.AddSignalR();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+            services.AddAuthentication("DemoSecurityScheme")
+    .AddCookie("DemoSecurityScheme", options =>
+    {
+        options.AccessDeniedPath = new PathString("/ChatBot/ChatPreview");
+        options.Cookie = new CookieBuilder
+        {
+            //Domain = "",
+            HttpOnly = true,
+            Name = ".aspNetCoreDemo.Security.Cookie",
+            Path = "/",
+            SameSite = SameSiteMode.Lax,
+            SecurePolicy = CookieSecurePolicy.SameAsRequest
+        };
+        options.Events = new CookieAuthenticationEvents
+        {
+            OnSignedIn = context =>
+            {
+                Console.WriteLine("{0} - {1}: {2}", DateTime.Now,
+                    "OnSignedIn", context.Principal.Identity.Name);
+                return Task.CompletedTask;
+            },
+            OnSigningOut = context =>
+            {
+                Console.WriteLine("{0} - {1}: {2}", DateTime.Now,
+                    "OnSigningOut", context.HttpContext.User.Identity.Name);
+                return Task.CompletedTask;
+            },
+            OnValidatePrincipal = context =>
+            {
+                Console.WriteLine("{0} - {1}: {2}", DateTime.Now,
+                    "OnValidatePrincipal", context.Principal.Identity.Name);
+                return Task.CompletedTask;
+            }
+        };
+        //options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+        options.LoginPath = new PathString("/Home/Login");
+        options.ReturnUrlParameter = "RequestPath";
+        options.SlidingExpiration = true;
+    });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +98,7 @@ namespace Hoang_Project_one
 
             app.UseAuthorization();
             app.UseAuthentication();
+        
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapHub<ChatHub>("/chatHub");
@@ -65,6 +107,7 @@ namespace Hoang_Project_one
                     pattern: "{controller=Home}/{action=Index}/{id}");
                 endpoints.MapControllerRoute("Login", "{controller=Home}/{action=Index}/{id?}");
             });
+           
         }
     }
 }

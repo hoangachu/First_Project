@@ -101,7 +101,7 @@ namespace Hoang_Project_one.Controllers
 
                         //sign-in
                         await HttpContext.SignInAsync(
-                           scheme: "SecurityScheme",
+                           scheme: "DemoSecurityScheme",
                            principal: claimsPrincipal,
                            properties: new AuthenticationProperties()
                            {
