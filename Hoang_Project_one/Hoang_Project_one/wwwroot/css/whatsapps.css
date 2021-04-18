@@ -5,7 +5,12 @@ table.outgoing_msg td {
 .back-main {
     background-color: #D9DBD5;
 }
-
+@media (max-width: 600px) {
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
 .back-container{
  position: relative;
 }
